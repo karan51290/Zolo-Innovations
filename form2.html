@@ -1,0 +1,29 @@
+    <form action="https://api.staticforms.xyz/submit" method="post">
+        <input type="text" name="name" placeholder="Your Name">
+        <input type="text" name="email" placeholder="Your Email" />
+        <textarea name="message"></textarea>
+        <input type="text" name="honeypot" style="display:none">
+        <input type="hidden" name="accessKey" value="e70eb77b-ec6d-49ca-96b5-beffd47472bd">
+        <input type="hidden" name="subject" value="Contact us from - example.com" />
+        <input type="hidden" name="replyTo" value="@">
+        <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
+        <input type="submit" value="Submit" />
+    </form>
+
+        <!-- Make sure you don't change the form action-->
+    <form action="https://api.staticforms.xyz/submit" method="post">
+        <!-- Replace with accesKey sent to your email -->
+        <input type="hidden" name="accessKey" value="e70eb77b-ec6d-49ca-96b5-beffd47472bd"> <!-- Required -->
+        <input type="text" name="name"> <!-- Optional -->
+        <input type="text" name="subject"> <!-- Optional -->
+        <input type="text" name="email"> <!-- Optional -->
+        <input type="text" name="phone"> <!-- Optional -->
+        <textarea name="message"></textarea> <!-- Optional -->
+        <!-- If you want replyTo to be set to specific email -->
+        <input type="text" name="replyTo" value="myreplytoemail@example.com"> <!-- Optional -->
+        <!-- Specify @ as reply to value if you want it to be customers email -->
+        <input type="hidden" name="replyTo" value="@"> <!-- Optional -->
+        <!-- If you want form to redirect to a specific url after submission -->
+        <input type="hidden" name="redirectTo" value="https://example.com/contact/success"> <!-- Optional -->
+        <input type="submit" value="Submit" />
+    </form>
