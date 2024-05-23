@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Service Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            label, input, select, button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Design Service Questionnaire</h1>
+        <form id="questionnaireForm">
+            <div class="form-group">
+                <label for="businessName">Business Name:</label>
+                <input type="text" id="businessName" name="businessName" required>
+            </div>
+            <div class="form-group">
+                <label for="websitePurpose">Purpose of the Website:</label>
+                <select id="websitePurpose" name="websitePurpose" required>
+                    <option value="Informational">Informational</option>
+                    <option value="E-commerce">E-commerce</option>
+                    <option value="Business Portfolio">Business Portfolio</option>
+                    <option value="Blog">Blog</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Other">Other (please specify)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="numPages">Estimated Number of Pages:</label>
+                <select id="numPages" name="numPages" required>
+                    <option value="1-5">1-5</option>
+                    <option value="6-10">6-10</option>
+                    <option value="11-20">11-20</option>
+                    <option value="20+">20+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeline">Timeline for Completion:</label>
+                <select id="timeline" name="timeline" required>
+                    <option value="No Hurry">No Hurry</option>
+					<option value="Immediate">Immediate</option>
+                    <option value="Within a week">Within a week</option>
+                    <option value="Within a month">Within a month</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="budget">Budget Range:</label>
+                <select id="budget" name="budget" required>
+                    <option value="Under Rs.10000">Under Rs.10000</option>
+                    <option value="Rs.10,000 - 20,000">Rs.10,000 - 20,000</option>
+                    <option value="$Rs. 20,000 - 50,000">Rs. 20,000 - 50,000</option>
+                    <option value="Rs.50,000+">Rs.50,000+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="additionalComments">Additional Comments or Requirements:</label>
+                <input type="text" id="additionalComments" name="additionalComments">
+            </div>
+            <button type="button" onclick="generateWhatsAppMessage()">Submit on Whatsapp</button>
+        </form>
+    </div>
+    <script>
+        function generateWhatsAppMessage() {
+            const businessName = document.getElementById('businessName').value;
+            const websitePurpose = document.getElementById('websitePurpose').value;
+            const numPages = document.getElementById('numPages').value;
+            const timeline = document.getElementById('timeline').value;
+            const budget = document.getElementById('budget').value;
+            const additionalComments = document.getElementById('additionalComments').value;
+
+            const message = `Hello. Below are the details for my website :\n\nBusiness Name: ${businessName}\nPurpose of the Website: ${websitePurpose}\nEstimated Number of Pages: ${numPages}\nTimeline for Completion: ${timeline}\nBudget Range: ${budget}\nAdditional Comments or Requirements: ${additionalComments}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/919991631193?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
